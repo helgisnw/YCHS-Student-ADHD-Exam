@@ -196,5 +196,5 @@ pyrightconfig.json
 
 hidden.py
 __pycache__/
-.vscode/settings.json
+.vscode/
 result
