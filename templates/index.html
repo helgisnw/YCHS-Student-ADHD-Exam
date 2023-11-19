@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>검사 결과</title>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css"> 
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            font-family: 'Nanum Gothic', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100%;
+            flex-direction: column;
+        }
+
+        header, main, section, footer {
+            text-align: center;
+            width: 100%;
+        }
+
+        header {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        main {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section {
+            margin-bottom: 10px;
+        }
+
+        h1, h2 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        li span {
+            font-weight: bold;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 600px) {
+            main {
+                padding: 5px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <header class="center">
+        <h1>검사 결과</h1>
+    </header>
+    <main class="center">
+    
+    <form id="myForm" action="" method="get">
+        <h3>구글 폼에 적으신 학번, 이름을 입력해주세요.</h3>
+        <input type="text" id="userInput" name="userInput" required placeholder="학번, 이름을 입력해주세요"><input type="submit" value="Go">
+        
+    </form>
+    <script>
+        document.getElementById('myForm').onsubmit = function() {
+            var userInput = document.getElementById('userInput').value;
+            this.action = 'https://helgisnw.live/result/' + encodeURIComponent(userInput) + '.html';
+        };
+    </script>
+    </main>
+    <footer class="center footer">
+        Made By <a href='https://github.com/helgisnw'>진우현</a>, Contributed by<a href='https://github.com/dkqdkq'>김도엽</a>
+    </footer>
+</body>
+</html>
